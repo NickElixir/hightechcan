@@ -1,14 +1,57 @@
+#include <dht11.h>  //Humidity sensor Lib
+dht11 DHT11; //Humidity sensor 
 int pwm;
 unsigned long time_chash=0;
+
+
+
 void setup() 
 {
     Serial.begin(9600); //buzzer
     pinMode(A2,INPUT); //buzzer
     pinMode(9,OUTPUT); //buzzer
+    
+    DHT11.attach(2);                        //Humidity sensor
+    Serial.begin(9600);                     //Humidity sensor
+    Serial.println("DHT11 TEST PROGRAM ");  //Humidity sensor
+    Serial.print("LIBRARY VERSION: ");      //Humidity sensor
+    Serial.println(DHT11LIB_VERSION);       //Humidity sensor
 }
 void loop() 
 {
-    if(millis()-time_chash == 100)  //buzzer
+    //Humidity sensor start
+       
+     Serial.println("\n");
+
+    int chk = DHT11.read();
+
+    Serial.print("Read sensor: ");
+    switch (chk)
+     {
+     case 0: Serial.println("OK"); break;
+     case -1: Serial.println("Checksum error"); break;
+     case -2: Serial.println("Time out error"); break;
+     default: Serial.println("Unknown error"); break;
+    }
+
+    Serial.print("Humidity (%): ");
+    Serial.println((int)DHT11.humidity, DEC);
+
+    Serial.print("Temperature (°C): ");
+    Serial.println((int)DHT11.temperature, DEC);
+
+    delay(1500);
+    
+    //This is printing 1)Type of error 2)Humidity in % in int. 3)Temperature in celcius in  int.
+    //DHT11.humidity-its humudity in %.
+    //DHT11.temperature-its temperature in celcius.
+    //Dont look on errors. Its working with every error.
+    
+  //Humiditi sensor end
+    
+    
+    //Buzzer start
+    if(millis()-time_chash == 100)  
     {
         time_chash=millis();
         pwm = analogRead(A2);
@@ -16,4 +59,5 @@ void loop()
         Serial.println(pwm);
         analogWrite(9,pwm);
     }
+    //Buzzer End
 }
