@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Nick">
+	<meta name="generator_source" content="https://github.com/andchir/jquery-video-extend">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Video-1</title>
+
+    <script src="video-1_files/jquery-1.js"></script>
+    <script src="video-1_files/jquery.js"></script>
+    
+    <style>
+        body { box-sizing: border-box; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #F5F5F5; }
+        .container { max-width: 1000px; padding: 30px; margin: 0 auto; }
+    </style>
+    
+    <script>
+        $(document).ready(function(){
+            
+            $('#plr').videoExtend({
+                markers: [
+                    {
+                        time: 117.75,// seconds
+                        text: 'example'
+                    }
+                ]
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <div class="container"> 
+        <h2>Heading coming soon.</h2>
+        <p>Description coming soon</p>
+        
+        <div class="video-extend-wrapper" style="width: 100%; max-width: 800px; margin: 0px auto;">
+            <video id="plr" controls="controls" style="display: block; background-color: rgb(0, 0, 0); width: 100%;" width="800" height="450">
+                <source src="video-1_files/video-1.mp4" type="video/mp4">
+            </video>
+            <div class="video-extend-progress-bar" style="position: relative; left: 28px; width: 644px; height: 0px; display: none;">
+            </div>
+        </div>    
+    </div>
+
+</body></html>
