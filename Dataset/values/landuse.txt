@@ -1,0 +1,5 @@
+farmland
+residential
+forest
+grass
+greenfield

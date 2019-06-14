@@ -1,0 +1,7 @@
+aeroway
+natural
+offices
+buildings
+landuse
+waterway
+highway

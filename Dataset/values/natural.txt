@@ -1,0 +1,5 @@
+wood
+tree
+scrub
+heath
+grassland
