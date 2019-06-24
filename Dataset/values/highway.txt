@@ -1,7 +1,0 @@
-motorway
-trunk
-primary
-secondary
-tertiary
-road
-residential
