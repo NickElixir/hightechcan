@@ -1,4 +1,2 @@
-aeroway
 buildings
-waterway
 highway
